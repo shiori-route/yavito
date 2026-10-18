@@ -70,6 +70,27 @@ its middle.
 
 Requires **Emacs 27.1 or later**. No third-party runtime dependencies.
 
+### Automatic installation with `use-package`
+
+On **Emacs 30.1 or later**, use the built-in `:vc` support to clone and
+install Yavito directly from GitHub:
+
+```elisp
+(use-package yavito
+  :ensure t
+  :vc (:url "https://github.com/shiori-route/yavito.git"
+       :rev :newest)
+  :bind ("C-;" . yavito-select))
+```
+
+When Yavito is not installed, evaluating this declaration fetches and installs
+it automatically. `:rev :newest` selects the latest commit rather than the
+last release. Git must be available on your system. See the
+[use-package installation manual](https://www.gnu.org/software/emacs/manual/html_node/use-package/Install-package.html)
+for details.
+
+### Manual installation
+
 Clone the repository into a directory on your `load-path`:
 
 ```sh
